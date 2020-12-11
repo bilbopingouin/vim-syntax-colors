@@ -220,12 +220,12 @@ hi TabLineSel                                                           ctermfg=
 """""""""""""""""""""""""""""""""""""""""""""""
 
 " HTML titles
-hi htmlH1								ctermfg=grey	  ctermbg=darkred   cterm=bold
-hi htmlH2								ctermfg=196			    cterm=bold
-hi htmlH3								ctermfg=124			    cterm=bold
-hi htmlH4								ctermfg=lightblue		    cterm=bold
-hi htmlH5								ctermfg=lightgreen		    cterm=bold
-hi htmlH6								ctermfg=lightred		    cterm=bold
+hi htmlH1								ctermfg=196	                    cterm=bold
+hi htmlH2								ctermfg=84			    cterm=bold
+hi htmlH3								ctermfg=226			    cterm=bold
+hi htmlH4								ctermfg=39			    cterm=bold
+hi htmlH5								ctermfg=212			    cterm=bold
+hi htmlH6								ctermfg=129			    cterm=bold
 
 " Tag names
 hi htmlTagName								ctermfg=cyan			    cterm=underline
