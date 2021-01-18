@@ -249,3 +249,7 @@ hi markdownItalic							ctermfg=yellow			    cterm=italic
 hi markdownBold								ctermfg=darkgreen		    cterm=bold
 hi markdownBoldItalic							ctermfg=black	  ctermbg=yellow    cterm=bold,italic 
 
+"""""""""""""""""""""""""""""""""""""""""""""""
+" Terminal
+"""""""""""""""""""""""""""""""""""""""""""""""
+hi Terminal										  ctermbg=233 
