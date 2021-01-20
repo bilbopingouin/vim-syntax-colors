@@ -66,14 +66,14 @@ hi WildMenu	guifg=yellow  guibg=black				ctermfg=yellow	  ctermbg=black	    cter
 hi ModeMsg	guifg=#22cce2						ctermfg=lightblue
 
 " |more-prompt|
-hi MoreMsg								ctermfg=darkgreen
+hi MoreMsg	guifg=darkgreen						ctermfg=darkgreen
 
 " |hit-enter| ask with the yes/no question
 hi Question	guifg=green			gui=none		ctermfg=green			    cterm=none
 
 " Special characters, like @ to mark the line kipping, also for listchars
 "hi NonText	guifg=#0030ff						ctermfg=darkblue
-hi NonText	guifg=darkgrey					ctermfg=darkgrey
+hi NonText	guifg=darkgrey						ctermfg=darkgrey
 
 " Line separting the vertiall-split windows
 hi VertSplit	guifg=black   guibg=darkgray	gui=none		ctermfg=black	  ctermbg=gray 	    cterm=none 	    term=none
@@ -113,7 +113,7 @@ hi Underlined												    cterm=underline term=underline
 hi Ignore	guifg=bg						ctermfg=bg
 
 " Strings, sub-category of Constants
-hi String								ctermfg=darkred
+hi String	guifg=darkred						ctermfg=darkred
 
 " Some elements for the GUI version
 set guifont=Noto\ Mono\ 10
@@ -123,7 +123,7 @@ set guifont=Noto\ Mono\ 10
 """""""""""""""""""""""""""""""""""""""""""""""
 
 " Statusline of the current window
-hi StatusLine	guifg=blue    guibg=darkgray	gui=none		ctermfg=white     ctermbg=darkcyan  cterm=none	    term=none
+hi StatusLine	guifg=white    guibg=darkcyan	gui=none		ctermfg=white     ctermbg=darkcyan  cterm=none	    term=none
 
 " Status line of the non current window (e.g. split window)
 hi StatusLineNC	guifg=black   guibg=darkgray	gui=none		ctermfg=darkgray  ctermbg=darkgray  cterm=none 	    term=none
@@ -132,10 +132,10 @@ hi StatusLineNC	guifg=black   guibg=darkgray	gui=none		ctermfg=darkgray  ctermbg
 " StatusLineTermNC: non-current window if it is not a terminal
 
 " Specific colors for the status line defined here that I use
-hi StatusLineFile							ctermfg=black	  ctermbg=lightgray cterm=none	    term=none
-hi StatusNonFile guifg=blue   guibg=darkgray	gui=none		ctermfg=lightgray ctermbg=darkgray  cterm=none	    term=none
-hi StatusLineMode							ctermfg=white	  ctermbg=darkcyan  cterm=bold	    term=none
-hi StatusLineDetails							ctermfg=lightgray ctermbg=darkgray  cterm=none	    term=none
+hi StatusLineFile guifg=black guibg=lightgray	gui=none		ctermfg=black	  ctermbg=lightgray cterm=none	    term=none
+hi StatusNonFile guifg=lightgray guibg=darkgray	gui=none		ctermfg=lightgray ctermbg=darkgray  cterm=none	    term=none
+hi StatusLineMode guifg=white guibg=darkcyan	gui=bold		ctermfg=white	  ctermbg=darkcyan  cterm=bold	    term=none
+hi StatusLineDetails guifg=lightgray guibg=darkgray gui=none		ctermfg=lightgray ctermbg=darkgray  cterm=none	    term=none
 
 
 """""""""""""""""""""""""""""""""""""""""""""""
@@ -143,10 +143,10 @@ hi StatusLineDetails							ctermfg=lightgray ctermbg=darkgray  cterm=none	    te
 """""""""""""""""""""""""""""""""""""""""""""""
 
 " Line used for folded lines
-hi Folded	guifg=#808080 guibg=#000040				ctermfg=darkgrey  ctermbg=235	    cterm=bold	    term=bold
+hi Folded	guifg=#808080 guibg=#000040	gui=bold		ctermfg=darkgrey  ctermbg=235	    cterm=bold	    term=bold
 
 " |foldcolumn| a column on the side which indicates that there are folds
-hi FoldColumn	guifg=#808080 guibg=#000040				ctermfg=darkgrey  ctermbg=235	    cterm=bold 	    term=bold
+hi FoldColumn	guifg=#808080 guibg=#000040	gui=bold		ctermfg=darkgrey  ctermbg=235	    cterm=bold 	    term=bold
 
 
 """""""""""""""""""""""""""""""""""""""""""""""
@@ -188,13 +188,13 @@ hi lCursor	guifg=black   guibg=white				ctermfg=black	  ctermbg=white
 """""""""""""""""""""""""""""""""""""""""""""""
 
 " Not active tab label
-hi TabLine                                                              ctermfg=black     ctermbg=gray      cterm=none
+hi TabLine      guifg=black	  guibg=gray	    gui=none            ctermfg=black     ctermbg=gray      cterm=none
 
 " Tab line when there are not label
-hi TabLineFill                                                          ctermfg=black     ctermbg=gray      cterm=none
+hi TabLineFill	guifg=black	  guibg=gray	    gui=none		ctermfg=black     ctermbg=gray      cterm=none
 
 " Active tab page label
-hi TabLineSel                                                           ctermfg=white     ctermbg=darkcyan  cterm=bold
+hi TabLineSel	guifg=white	  guibg=darkcyan    gui=none            ctermfg=white     ctermbg=darkcyan  cterm=bold
 
 
 """""""""""""""""""""""""""""""""""""""""""""""
@@ -220,36 +220,36 @@ hi TabLineSel                                                           ctermfg=
 """""""""""""""""""""""""""""""""""""""""""""""
 
 " HTML titles
-hi htmlH1								ctermfg=196	                    cterm=bold
-hi htmlH2								ctermfg=84			    cterm=bold
-hi htmlH3								ctermfg=226			    cterm=bold
-hi htmlH4								ctermfg=39			    cterm=bold
-hi htmlH5								ctermfg=212			    cterm=bold
-hi htmlH6								ctermfg=129			    cterm=bold
+hi htmlH1	guifg=#ff0000			    gui=bold		ctermfg=196	                    cterm=bold
+hi htmlH2	guifg=#00ff8b			    gui=bold		ctermfg=84			    cterm=bold
+hi htmlH3	guifg=#f9ff71			    gui=bold		ctermfg=226			    cterm=bold
+hi htmlH4	guifg=#71d5ec			    gui=bold		ctermfg=39			    cterm=bold
+hi htmlH5	guifg=#fb9bda			    gui=bold		ctermfg=212			    cterm=bold
+hi htmlH6	guifg=#bd55ee			    gui=bold		ctermfg=129			    cterm=bold
 
 " Tag names
-hi htmlTagName								ctermfg=cyan			    cterm=underline
+hi htmlTagName	guifg=cyan			    gui=underline	ctermfg=cyan			    cterm=underline
 
 " Italic/bold text
-hi htmlItalic								ctermfg=yellow			    cterm=italic
-hi htmlBold								ctermfg=darkgreen		    cterm=bold
-hi htmlBoldItalic							ctermfg=black	  ctermbg=yellow    cterm=bold,italic 
+hi htmlItalic	guifg=yellow			    gui=italic		ctermfg=yellow			    cterm=italic
+hi htmlBold	guifg=darkgreen			    gui=bold		ctermfg=darkgreen		    cterm=bold
+hi htmlBoldItalic guifg=black	  guibg=yellow	    gui=bold,italic	ctermfg=black	  ctermbg=yellow    cterm=bold,italic 
 
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " Markup
 """""""""""""""""""""""""""""""""""""""""""""""
 
-hi markdownRule								ctermfg=darkgrey  ctermbg=233	    cterm=none
-hi markdownListMarker							ctermfg=yellow			    cterm=none
-hi markdownUrl								ctermfg=cyan			    cterm=underline
+hi markdownRule	guifg=darkgrey	guibg=#282828	    gui=none		ctermfg=darkgrey  ctermbg=233	    cterm=none
+hi markdownListMarker guifg=yellow		    gui=none		ctermfg=yellow			    cterm=none
+hi markdownUrl	guifg=cyan			    gui=underline	ctermfg=cyan			    cterm=underline
 
 " Italic/bold text
-hi markdownItalic							ctermfg=yellow			    cterm=italic
-hi markdownBold								ctermfg=darkgreen		    cterm=bold
-hi markdownBoldItalic							ctermfg=black	  ctermbg=yellow    cterm=bold,italic 
+hi markdownItalic guifg=yellow			    gui=italic		ctermfg=yellow			    cterm=italic
+hi markdownBold	guifg=darkgreen			    gui=bold		ctermfg=darkgreen		    cterm=bold
+hi markdownBoldItalic guifg=black guibg=yellow      gui=bold,italic	ctermfg=black	  ctermbg=yellow    cterm=bold,italic 
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " Terminal
 """""""""""""""""""""""""""""""""""""""""""""""
-hi Terminal										  ctermbg=233 
+hi Terminal	guifg=#282828								  ctermbg=233 
