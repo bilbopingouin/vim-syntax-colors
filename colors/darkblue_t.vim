@@ -116,7 +116,8 @@ hi Ignore	guifg=bg						ctermfg=bg
 hi String	guifg=darkred						ctermfg=darkred
 
 " Some elements for the GUI version
-set guifont=Noto\ Mono\ 10
+set guifont=Consolas:h9:cANSI:qDRAFT
+
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " Status line
