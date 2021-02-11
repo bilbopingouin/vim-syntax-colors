@@ -1,21 +1,13 @@
 " Vim color file
-" Based on
-"
-" Debian version (Wheezy): darkblue
-" Maintainer:	Bohdan Vlasyuk <bohdan@vstu.edu.ua>
-" Last Change:	2008 Jul 18
-"
-" But heavily modified
-" Peronalised version: darkblue_t
+" Peronalised version: nature
 " Last modification by bilbopingouin: 02.2021
 
-"set bg=dark
 hi clear
 if exists("syntax_on")
-	syntax reset
+  syntax reset
 endif
 
-let colors_name = "darkblue_t"
+let colors_name = "nature"
 
 "
 " Keys for highlight
@@ -43,28 +35,28 @@ let colors_name = "darkblue_t"
 
 " Normal/Default text
 if &background == "dark"
-  hi Normal	guifg=#c0c0c0	  guibg=#282828
+  hi Normal	guifg=#c6d4dd	  guibg=#2a2a36
   hi Normal	ctermfg=gray	  ctermbg=235
 else
   hi Normal	guifg=#000020	  guibg=#c0c0c0
-  hi Normal	ctermfg=black	  ctermbg=white
+  hi Normal	ctermfg=235	  ctermbg=251
 endif
 
 " Error messages on the command line
 hi ErrorMsg	guifg=#ffffff	  guibg=#287eff
-hi ErrorMsg	ctermfg=red	  ctermbg=lightblue
+hi ErrorMsg	ctermfg=22	  ctermbg=159
 
 " Visual selection
 hi Visual	guifg=#8080ff	  guibg=fg	    gui=reverse
-hi Visual	ctermfg=lightblue ctermbg=darkred   cterm=reverse
+hi Visual	ctermfg=251	  ctermbg=22	    cterm=reverse
 
 " Visual selection - 'Not Owning the Selection'
 hi VisualNOS	guifg=#8080ff	  guibg=fg	    gui=reverse,underline
-hi VisualNOS	ctermfg=lightblue ctermbg=fg	    cterm=reverse,underline
+hi VisualNOS	ctermfg=249	  ctermbg=fg	    cterm=reverse,underline
 
 " TODO highlighting
 hi Todo		guifg=#d14a14	  guibg=#1248d1
-hi Todo		ctermfg=18	  ctermbg=220	    cterm=bold
+hi Todo		ctermfg=18	  ctermbg=22	    cterm=bold
 
 " Last search pattern highlighting
 hi Search	guifg=#90fff0	  guibg=#2050d0
@@ -81,28 +73,28 @@ hi SpecialKey	ctermfg=darkgrey
 
 " Directory name and other special names in listings
 hi Directory	guifg=cyan
-hi Directory	ctermfg=cyan
+hi Directory	ctermfg=darkcyan
 
 " Titles for outputs of :set all/:autocmd/..
 hi Title	guifg=magenta			      gui=none
-hi Title	ctermfg=magenta			      cterm=bold
+hi Title	ctermfg=69			      cterm=bold
 
 " Warning messages
 hi WarningMsg	guifg=red
-hi WarningMsg	ctermfg=red
+hi WarningMsg	ctermfg=99
 
 " Current match in the wildmenu
 hi WildMenu	guifg=yellow	    guibg=black
-hi WildMenu	ctermfg=yellow	    ctermbg=black	cterm=none
+hi WildMenu	ctermfg=114	    ctermbg=black	cterm=none
 hi WildMenu	term=none
 
 " Show mode message, e.g. -- INSERT --
 hi ModeMsg	guifg=#22cce2
-hi ModeMsg	ctermfg=lightblue
+hi ModeMsg	ctermfg=darkcyan
 
 " |more-prompt|
 hi MoreMsg	guifg=darkgreen
-hi MoreMsg	ctermfg=darkgreen
+hi MoreMsg	ctermfg=darkcyan
 
 " |hit-enter| ask with the yes/no question
 hi Question	guifg=green			    gui=none
@@ -126,21 +118,21 @@ hi Comment	ctermfg=darkgray
 hi Comment	guifg=#808080
 
 " Constants: includes: String, Character, Number, Boolean, Floar
-hi Constant	ctermfg=magenta			    cterm=none
 hi Constant	guifg=#ffa0a0
+hi Constant	ctermfg=75			    cterm=none
 
 " Special characters, includes: SpecialChar, Tag, Delimiter, SpecialComment, Debug
-hi Special	ctermfg=brown			    cterm=none
 hi Special	guifg=Orange			    gui=none
+hi Special	ctermfg=130			    cterm=none
 
 " Any variable name, includes: Function
 hi Identifier	guifg=#40ffff
-hi Identifier	ctermfg=cyan			    cterm=none
+hi Identifier	ctermfg=34			    cterm=none
 
 " Any statement, includes: Conditional, Repeat, Label, Operator, Keyword, Exception
 if &background == "dark"
   hi Statement	guifg=#ffff60			    gui=none
-  hi Statement	ctermfg=yellow			    cterm=none
+  hi Statement	ctermfg=107			    cterm=none
 else
   hi Statement	guifg=#ffff60			    gui=none
   hi Statement	ctermfg=blue			    cterm=none
@@ -152,7 +144,7 @@ hi PreProc	ctermfg=darkblue		    cterm=bold
 
 " Type declaration (int, double), includes: StorageClass (static, register, volatile), Structure (struct, union, enum), Typedef (typedef)
 hi Type		guifg=#60ff60			    gui=none
-hi Type		ctermfg=green			    cterm=none
+hi Type		ctermfg=179			    cterm=none
 
 " Text that stands out, html links, etc.
 hi Underlined					    cterm=underline
@@ -164,10 +156,10 @@ hi Ignore	ctermfg=bg
 
 " Strings, sub-category of Constants
 hi String	guifg=darkred
-hi String	ctermfg=darkred
+hi String	ctermfg=28
 
 " Some elements for the GUI version
-set guifont=Consolas:h9:cANSI:qDRAFT
+"set guifont=Consolas:h9:cANSI:qDRAFT
 
 
 """""""""""""""""""""""""""""""""""""""""""""""
@@ -293,19 +285,19 @@ hi TabLineSel	ctermfg=white     ctermbg=darkcyan  cterm=bold
 
 " HTML titles
 hi htmlH1	guifg=#ff0000			    gui=bold
-hi htmlH1	ctermfg=196	                    cterm=bold
+hi htmlH1	ctermfg=27	                    cterm=bold
 
 hi htmlH2	guifg=#00ff8b			    gui=bold
 hi htmlH2	ctermfg=84			    cterm=bold
 
 hi htmlH3	guifg=#f9ff71			    gui=bold
-hi htmlH3	ctermfg=226			    cterm=bold
+hi htmlH3	ctermfg=142			    cterm=bold
 
 hi htmlH4	guifg=#71d5ec			    gui=bold
 hi htmlH4	ctermfg=39			    cterm=bold
 
 hi htmlH5	guifg=#fb9bda			    gui=bold
-hi htmlH5	ctermfg=212			    cterm=bold
+hi htmlH5	ctermfg=147			    cterm=bold
 
 hi htmlH6	guifg=#bd55ee			    gui=bold
 hi htmlH6	ctermfg=129			    cterm=bold
