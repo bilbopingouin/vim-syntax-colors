@@ -7,7 +7,7 @@
 "
 " But heavily modified
 " Peronalised version: darkblue_t
-" Last modification by bilbopingouin: 12.2020
+" Last modification by bilbopingouin: 01.2021
 
 "set bg=dark
 hi clear
@@ -17,103 +17,186 @@ endif
 
 let colors_name = "darkblue_t"
 
+"
+" Keys for highlight
+" - term (normal terminal)
+"   * term=
+"     bold, underline, undercurl*, strikethrough*, reverse, inverse
+"     italic, standout, nocombine, NONE
+"   * start= / stop=
+" - cterm (color-terminal)
+"   * cterm=
+"   * ctermfg= foreground colour
+"   * ctermbg= background colour
+"   * ctermul= unterline colour
+" - gui
+"   * gui=
+"   * guifg=
+"   * guibg=
+"   * guisp= undercurl/strikethrough
+"   * font=
+"
+
 """""""""""""""""""""""""""""""""""""""""""""""
 " General Configuration
 """""""""""""""""""""""""""""""""""""""""""""""
 
 " Normal/Default text
 if &background == "dark"
-  hi Normal	guifg=#c0c0c0 guibg=#282828				ctermfg=gray	  ctermbg=235
+  hi Normal	guifg=#c0c0c0	  guibg=#282828
+  hi Normal	ctermfg=gray	  ctermbg=235
+  "hi Normal	guifg=#c0c0c0 guibg=#282828				ctermfg=gray	  ctermbg=235
 else
-  hi Normal	guifg=#000020 guibg=#c0c0c0				ctermfg=black	  ctermbg=white
+  hi Normal	guifg=#000020	  guibg=#c0c0c0
+  hi Normal	ctermfg=black	  ctermbg=white
+  "hi Normal	guifg=#000020 guibg=#c0c0c0				ctermfg=black	  ctermbg=white
 endif
 
 " Error messages on the command line
-hi ErrorMsg	guifg=#ffffff guibg=#287eff				ctermfg=red	  ctermbg=lightblue
+hi ErrorMsg	guifg=#ffffff	  guibg=#287eff
+hi ErrorMsg	ctermfg=red	  ctermbg=lightblue
+"hi ErrorMsg	guifg=#ffffff guibg=#287eff				ctermfg=red	  ctermbg=lightblue
 
 " Visual selection
-hi Visual	guifg=#8080ff guibg=fg		gui=reverse		ctermfg=lightblue ctermbg=darkred   cterm=reverse
+hi Visual	guifg=#8080ff	  guibg=fg	    gui=reverse
+hi Visual	ctermfg=lightblue ctermbg=darkred   cterm=reverse
+"hi Visual	guifg=#8080ff guibg=fg		gui=reverse		ctermfg=lightblue ctermbg=darkred   cterm=reverse
 
 " Visual selection - 'Not Owning the Selection'
-hi VisualNOS	guifg=#8080ff guibg=fg		gui=reverse,underline	ctermfg=lightblue ctermbg=fg	    cterm=reverse,underline
+hi VisualNOS	guifg=#8080ff	  guibg=fg	    gui=reverse,underline
+hi VisualNOS	ctermfg=lightblue ctermbg=fg	    cterm=reverse,underline
+"hi VisualNOS	guifg=#8080ff	  guibg=fg		gui=reverse,underline	ctermfg=lightblue ctermbg=fg	    cterm=reverse,underline
 
 " TODO highlighting
-hi Todo		guifg=#d14a14 guibg=#1248d1				ctermfg=18	  ctermbg=220  cterm=bold
+hi Todo		guifg=#d14a14	  guibg=#1248d1
+hi Todo		ctermfg=18	  ctermbg=220	    cterm=bold
+"hi Todo		guifg=#d14a14 guibg=#1248d1				ctermfg=18	  ctermbg=220  cterm=bold
 
 " Last search pattern highlighting
-hi Search	guifg=#90fff0 guibg=#2050d0				ctermfg=white	  ctermbg=darkblue  cterm=underline term=underline
+hi Search	guifg=#90fff0	  guibg=#2050d0
+hi Search	ctermfg=white	  ctermbg=darkblue  cterm=underline term=underline
+hi Search	term=underline
+"hi Search	guifg=#90fff0 guibg=#2050d0				ctermfg=white	  ctermbg=darkblue  cterm=underline term=underline
 
 " 'incsearch' highlighting: when typing
-hi IncSearch	guifg=#b0ffff guibg=#2050d0				ctermfg=darkblue  ctermbg=gray
+hi IncSearch	guifg=#b0ffff	  guibg=#2050d0
+hi IncSearch	ctermfg=darkblue  ctermbg=gray
+"hi IncSearch	guifg=#b0ffff guibg=#2050d0				ctermfg=darkblue  ctermbg=gray
 
 " Meta and special keys from :map or from listchars
 "hi SpecialKey	guifg=cyan						ctermfg=darkcyan
-hi SpecialKey	guifg=darkgrey						ctermfg=darkgrey
+"hi SpecialKey	guifg=darkgrey						ctermfg=darkgrey
+hi SpecialKey	guifg=darkgrey
+hi SpecialKey	ctermfg=darkgrey
 
 " Directory name and other special names in listings
-hi Directory	guifg=cyan						ctermfg=cyan
+"hi Directory	guifg=cyan						ctermfg=cyan
+hi Directory	guifg=cyan
+hi Directory	ctermfg=cyan
 
 " Titles for outputs of :set all/:autocmd/..
-hi Title	guifg=magenta			gui=none		ctermfg=magenta			    cterm=bold
+" hi Title	guifg=magenta			gui=none		ctermfg=magenta			    cterm=bold
+hi Title	guifg=magenta			      gui=none
+hi Title	ctermfg=magenta			      cterm=bold
 
 " Warning messages
-hi WarningMsg	guifg=red						ctermfg=red
+" hi WarningMsg	guifg=red						ctermfg=red
+hi WarningMsg	guifg=red
+hi WarningMsg	ctermfg=red
 
 " Current match in the wildmenu
-hi WildMenu	guifg=yellow  guibg=black				ctermfg=yellow	  ctermbg=black	    cterm=none	    term=none
+" hi WildMenu	guifg=yellow  guibg=black				ctermfg=yellow	  ctermbg=black	    cterm=none	    term=none
+hi WildMenu	guifg=yellow	    guibg=black
+hi WildMenu	ctermfg=yellow	    ctermbg=black	cterm=none
+hi WildMenu	term=none
 
 " Show mode message, e.g. -- INSERT --
-hi ModeMsg	guifg=#22cce2						ctermfg=lightblue
+" hi ModeMsg	guifg=#22cce2						ctermfg=lightblue
+hi ModeMsg	guifg=#22cce2
+hi ModeMsg	ctermfg=lightblue
 
 " |more-prompt|
-hi MoreMsg	guifg=darkgreen						ctermfg=darkgreen
+" hi MoreMsg	guifg=darkgreen						ctermfg=darkgreen
+hi MoreMsg	guifg=darkgreen
+hi MoreMsg	ctermfg=darkgreen
 
 " |hit-enter| ask with the yes/no question
-hi Question	guifg=green			gui=none		ctermfg=green			    cterm=none
+" hi Question	guifg=green			gui=none		ctermfg=green			    cterm=none
+hi Question	guifg=green			    gui=none
+hi Question	ctermfg=green			    cterm=none
 
 " Special characters, like @ to mark the line kipping, also for listchars
 "hi NonText	guifg=#0030ff						ctermfg=darkblue
-hi NonText	guifg=darkgrey						ctermfg=darkgrey
+" hi NonText	guifg=darkgrey						ctermfg=darkgrey
+hi NonText	guifg=darkgrey
+hi NonText	ctermfg=darkgrey
 
 " Line separting the vertiall-split windows
-hi VertSplit	guifg=black   guibg=darkgray	gui=none		ctermfg=black	  ctermbg=gray 	    cterm=none 	    term=none
+" hi VertSplit	guifg=black   guibg=darkgray	gui=none		ctermfg=black	  ctermbg=gray 	    cterm=none 	    term=none
+hi VertSplit	guifg=black	  guibg=darkgray    gui=none
+hi VertSplit	ctermfg=black	  ctermbg=gray 	    cterm=none
+hi VertSplit	term=none
 
 " :number :# :number :relativenumber
-hi LineNr	guifg=#90f020						ctermfg=green			    cterm=none
+" hi LineNr	guifg=#90f020						ctermfg=green			    cterm=none
+hi LineNr	guifg=#90f020
+hi LineNr	ctermfg=green			    cterm=none
 
 " Comments colours
-hi Comment	guifg=#80a0ff						ctermfg=darkgray
+" hi Comment	guifg=#808080						ctermfg=darkgray
+hi Comment	ctermfg=darkgray
+hi Comment	guifg=#808080
 
 " Constants: includes: String, Character, Number, Boolean, Floar
-hi Constant	guifg=#ffa0a0						ctermfg=magenta			    cterm=none
+" hi Constant	guifg=#ffa0a0						ctermfg=magenta			    cterm=none
+hi Constant	ctermfg=magenta			    cterm=none
+hi Constant	guifg=#ffa0a0
 
 " Special characters, includes: SpecialChar, Tag, Delimiter, SpecialComment, Debug
-hi Special	guifg=Orange 			gui=none		ctermfg=brown			    cterm=none 
+" hi Special	guifg=Orange 			gui=none		ctermfg=brown			    cterm=none
+hi Special	ctermfg=brown			    cterm=none
+hi Special	guifg=Orange			    gui=none
 
 " Any variable name, includes: Function
-hi Identifier	guifg=#40ffff						ctermfg=cyan			    cterm=none
+" hi Identifier	guifg=#40ffff						ctermfg=cyan			    cterm=none
+hi Identifier	guifg=#40ffff
+hi Identifier	ctermfg=cyan			    cterm=none
 
 " Any statement, includes: Conditional, Repeat, Label, Operator, Keyword, Exception
 if &background == "dark"
-  hi Statement	guifg=#ffff60			gui=none		ctermfg=yellow			    cterm=none 
+"   hi Statement	guifg=#ffff60			gui=none		ctermfg=yellow			    cterm=none
+  hi Statement	guifg=#ffff60			    gui=none
+  hi Statement	ctermfg=yellow			    cterm=none
 else
-  hi Statement	guifg=#ffff60			gui=none		ctermfg=blue			    cterm=none 
+"   hi Statement	guifg=#ffff60			gui=none		ctermfg=blue			    cterm=none
+  hi Statement	guifg=#ffff60			    gui=none
+  hi Statement	ctermfg=blue			    cterm=none
 endif
 
 " Generic pre-processors, includes: Include, Define, Macro, PreCondit (#if, #else...)
-hi PreProc	guifg=#ff80ff			gui=none 		ctermfg=darkblue		    cterm=bold
+" hi PreProc	guifg=#ff80ff			gui=none 		ctermfg=darkblue		    cterm=bold
+hi PreProc	guifg=#ff80ff			    gui=none
+hi PreProc	ctermfg=darkblue		    cterm=bold
 
 " Type declaration (int, double), includes: StorageClass (static, register, volatile), Structure (struct, union, enum), Typedef (typedef)
-hi Type		guifg=#60ff60			gui=none 		ctermfg=green			    cterm=none
+" hi Type		guifg=#60ff60			gui=none 		ctermfg=green			    cterm=none
+hi Type		guifg=#60ff60			    gui=none
+hi Type		ctermfg=green			    cterm=none
 
 " Text that stands out, html links, etc.
-hi Underlined												    cterm=underline term=underline
+" hi Underlined												    cterm=underline term=underline
+hi Underlined					    cterm=underline
+hi Underlined					    term=underline
 
 " left-blank, hidden |hl-Ignore|
-hi Ignore	guifg=bg						ctermfg=bg
+" hi Ignore	guifg=bg						ctermfg=bg
+hi Ignore	guifg=bg
+hi Ignore	ctermfg=bg
 
 " Strings, sub-category of Constants
-hi String	guifg=darkred						ctermfg=darkred
+" hi String	guifg=darkred						ctermfg=darkred
+hi String	guifg=darkred
+hi String	ctermfg=darkred
 
 " Some elements for the GUI version
 set guifont=Consolas:h9:cANSI:qDRAFT
@@ -124,19 +207,37 @@ set guifont=Consolas:h9:cANSI:qDRAFT
 """""""""""""""""""""""""""""""""""""""""""""""
 
 " Statusline of the current window
-hi StatusLine	guifg=white    guibg=darkcyan	gui=none		ctermfg=white     ctermbg=darkcyan  cterm=none	    term=none
+" hi StatusLine	guifg=white    guibg=darkcyan	gui=none		ctermfg=white     ctermbg=darkcyan  cterm=none	    term=none
+hi StatusLine	guifg=white	  guibg=darkcyan	gui=none
+hi StatusLine	ctermfg=white     ctermbg=darkcyan	cterm=none
+hi StatusLine	term=none
 
 " Status line of the non current window (e.g. split window)
-hi StatusLineNC	guifg=black   guibg=darkgray	gui=none		ctermfg=darkgray  ctermbg=darkgray  cterm=none 	    term=none
+" hi StatusLineNC	guifg=black   guibg=darkgray	gui=none		ctermfg=darkgray  ctermbg=darkgray  cterm=none 	    term=none
+hi StatusLineNC	guifg=black	  guibg=darkgray	gui=none
+hi StatusLineNC	ctermfg=darkgray  ctermbg=darkgray	cterm=none
+hi StatusLineNC	term=none
 
 " StatusLineTerm: current window if it is a terminal
 " StatusLineTermNC: non-current window if it is not a terminal
 
 " Specific colors for the status line defined here that I use
-hi StatusLineFile guifg=black guibg=lightgray	gui=none		ctermfg=black	  ctermbg=lightgray cterm=none	    term=none
-hi StatusNonFile guifg=lightgray guibg=darkgray	gui=none		ctermfg=lightgray ctermbg=darkgray  cterm=none	    term=none
-hi StatusLineMode guifg=white guibg=darkcyan	gui=bold		ctermfg=white	  ctermbg=darkcyan  cterm=bold	    term=none
-hi StatusLineDetails guifg=lightgray guibg=darkgray gui=none		ctermfg=lightgray ctermbg=darkgray  cterm=none	    term=none
+" hi StatusLineFile guifg=black guibg=lightgray	gui=none		ctermfg=black	  ctermbg=lightgray cterm=none	    term=none
+hi StatusLineFile guifg=black guibg=lightgray	gui=none
+hi StatusLineFile ctermfg=black	  ctermbg=lightgray cterm=none
+hi StatusLineFile term=none
+" hi StatusNonFile guifg=lightgray guibg=darkgray	gui=none		ctermfg=lightgray ctermbg=darkgray  cterm=none	    term=none
+hi StatusNonFile guifg=lightgray guibg=darkgray	gui=none
+hi StatusNonFile ctermfg=lightgray ctermbg=darkgray  cterm=none
+hi StatusNonFile term=none
+" hi StatusLineMode guifg=white guibg=darkcyan	gui=bold		ctermfg=white	  ctermbg=darkcyan  cterm=bold	    term=none
+hi StatusLineMode guifg=white guibg=darkcyan	gui=bold
+hi StatusLineMode ctermfg=white	  ctermbg=darkcyan  cterm=bold
+hi StatusLineMode term=none
+" hi StatusLineDetails guifg=lightgray guibg=darkgray gui=none		ctermfg=lightgray ctermbg=darkgray  cterm=none	    term=none
+hi StatusLineDetails guifg=lightgray guibg=darkgray gui=none
+hi StatusLineDetails ctermfg=lightgray ctermbg=darkgray  cterm=none
+hi StatusLineDetails term=none
 
 
 """""""""""""""""""""""""""""""""""""""""""""""
@@ -144,33 +245,48 @@ hi StatusLineDetails guifg=lightgray guibg=darkgray gui=none		ctermfg=lightgray 
 """""""""""""""""""""""""""""""""""""""""""""""
 
 " Line used for folded lines
-hi Folded	guifg=#808080 guibg=#000040	gui=bold		ctermfg=darkgrey  ctermbg=235	    cterm=bold	    term=bold
+" hi Folded	guifg=#808080 guibg=#000040	gui=bold		ctermfg=darkgrey  ctermbg=235	    cterm=bold	    term=bold
+hi Folded	guifg=#808080 guibg=#000040	gui=bold
+hi Folded	ctermfg=darkgrey  ctermbg=235	    cterm=bold
+hi Folded	term=bold
 
 " |foldcolumn| a column on the side which indicates that there are folds
-hi FoldColumn	guifg=#808080 guibg=#000040	gui=bold		ctermfg=darkgrey  ctermbg=235	    cterm=bold 	    term=bold
+" hi FoldColumn	guifg=#808080 guibg=#000040	gui=bold		ctermfg=darkgrey  ctermbg=235	    cterm=bold 	    term=bold
+hi FoldColumn	guifg=#808080 guibg=#000040	gui=bold
+hi FoldColumn	ctermfg=darkgrey  ctermbg=235	    cterm=bold
+hi FoldColumn	term=bold
 
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " Diffs
 """""""""""""""""""""""""""""""""""""""""""""""
 
-" hi DiffAdd		      guibg=darkblue						  ctermbg=darkblue  cterm=none	    term=none 
+" hi DiffAdd		      guibg=darkblue						  ctermbg=darkblue  cterm=none	    term=none
 " hi DiffChange		      guibg=darkmagenta						  ctermbg=magenta   cterm=none
-" hi DiffDelete	guifg=Blue    guibg=DarkCyan	gui=bold 		ctermfg=blue	  ctermbg=cyan	  
-" hi DiffText		      guibg=Red		gui=bold				  ctermbg=red	    cterm=bold 
+" hi DiffDelete	guifg=Blue    guibg=DarkCyan	gui=bold 		ctermfg=blue	  ctermbg=cyan
+" hi DiffText		      guibg=Red		gui=bold				  ctermbg=red	    cterm=bold
 "
-" Added line, default: hi DiffAdd	  ctermbg=4 guibg=darkblue 
-" hi DiffAdd		      guibg=darkblue						  ctermbg=darkblue  cterm=none	    term=none 
-hi DiffAdd	  guifg=yellow    guibg=darkblue    gui=bold		ctermfg=10	  ctermbg=17	    cterm=bold
-" Changed line, default: hi DiffChange	  term=bold ctermbg=13 guibg=darkmagenta 
+" Added line, default: hi DiffAdd	  ctermbg=4 guibg=darkblue
+" hi DiffAdd		      guibg=darkblue						  ctermbg=darkblue  cterm=none	    term=none
+" hi DiffAdd	  guifg=yellow    guibg=darkblue    gui=bold		ctermfg=10	  ctermbg=17	    cterm=bold
+hi DiffAdd	  guifg=yellow    guibg=darkblue    gui=bold
+hi DiffAdd	  ctermfg=10	  ctermbg=17	    cterm=bold
+" Changed line, default: hi DiffChange	  term=bold ctermbg=13 guibg=darkmagenta
 " hi DiffChange		      guibg=darkmagenta						  ctermbg=magenta   cterm=none
-hi DiffChange	  guifg=yellow    guibg=darkblue    gui=none		ctermfg=10	  ctermbg=17	    cterm=none
-" Deleted line, default: hi DiffDelete	  term=bold ctermfg=12 ctermbg=14 gui=bold guifg=Blue guibg=DarkCyan 
-" hi DiffDelete	guifg=Blue    guibg=DarkCyan	gui=bold 		ctermfg=blue	  ctermbg=cyan	  
-hi DiffDelete	  guifg=yellow	  guibg=darkblue    gui=bold		ctermfg=10	  ctermbg=17	    cterm=bold 
-" Text change within a changed line, default: hi DiffText	  term=reverse cterm=bold ctermbg=9 gui=bold guibg=Red 
-" hi DiffText		      guibg=Red		gui=bold				  ctermbg=red	    cterm=bold 
-hi DiffText	  guifg=yellow    guibg=darkred	    gui=bold		ctermfg=10	  ctermbg=88	    cterm=bold	    term=reverse
+" hi DiffChange	  guifg=yellow    guibg=darkblue    gui=none		ctermfg=10	  ctermbg=17	    cterm=none
+hi DiffChange	  guifg=yellow    guibg=darkblue    gui=none
+hi DiffChange	  ctermfg=10	  ctermbg=17	    cterm=none
+" Deleted line, default: hi DiffDelete	  term=bold ctermfg=12 ctermbg=14 gui=bold guifg=Blue guibg=DarkCyan
+" hi DiffDelete	guifg=Blue    guibg=DarkCyan	gui=bold 		ctermfg=blue	  ctermbg=cyan
+" hi DiffDelete	  guifg=yellow	  guibg=darkblue    gui=bold		ctermfg=10	  ctermbg=17	    cterm=bold
+hi DiffDelete	  guifg=yellow	  guibg=darkblue    gui=bold
+hi DiffDelete	  ctermfg=10	  ctermbg=17	    cterm=bold
+" Text change within a changed line, default: hi DiffText	  term=reverse cterm=bold ctermbg=9 gui=bold guibg=Red
+" hi DiffText		      guibg=Red		gui=bold				  ctermbg=red	    cterm=bold
+" hi DiffText	  guifg=yellow    guibg=darkred	    gui=bold		ctermfg=10	  ctermbg=88	    cterm=bold	    term=reverse
+hi DiffText	  guifg=yellow    guibg=darkred	    gui=bold
+hi DiffText	  ctermfg=10	  ctermbg=88	    cterm=bold
+hi DiffText	  term=reverse
 
 
 """""""""""""""""""""""""""""""""""""""""""""""
@@ -178,10 +294,14 @@ hi DiffText	  guifg=yellow    guibg=darkred	    gui=bold		ctermfg=10	  ctermbg=8
 """""""""""""""""""""""""""""""""""""""""""""""
 
 " Normal cursor colour
-hi Cursor	guifg=black   guibg=yellow				ctermfg=black	  ctermbg=yellow
+" hi Cursor	guifg=black   guibg=yellow				ctermfg=black	  ctermbg=yellow
+hi Cursor	guifg=black   guibg=yellow
+hi Cursor	ctermfg=black	  ctermbg=yellow
 
 " Cursor colour when language mapping are used
-hi lCursor	guifg=black   guibg=white				ctermfg=black	  ctermbg=white
+" hi lCursor	guifg=black   guibg=white				ctermfg=black	  ctermbg=white
+hi lCursor	guifg=black   guibg=white
+hi lCursor	ctermfg=black	  ctermbg=white
 
 
 """""""""""""""""""""""""""""""""""""""""""""""
@@ -189,20 +309,26 @@ hi lCursor	guifg=black   guibg=white				ctermfg=black	  ctermbg=white
 """""""""""""""""""""""""""""""""""""""""""""""
 
 " Not active tab label
-hi TabLine      guifg=black	  guibg=gray	    gui=none            ctermfg=black     ctermbg=gray      cterm=none
+" hi TabLine      guifg=black	  guibg=gray	    gui=none            ctermfg=black     ctermbg=gray      cterm=none
+hi TabLine      guifg=black	  guibg=gray	    gui=none
+hi TabLine      ctermfg=black     ctermbg=gray      cterm=none
 
 " Tab line when there are not label
-hi TabLineFill	guifg=black	  guibg=gray	    gui=none		ctermfg=black     ctermbg=gray      cterm=none
+" hi TabLineFill	guifg=black	  guibg=gray	    gui=none		ctermfg=black     ctermbg=gray      cterm=none
+hi TabLineFill	guifg=black	  guibg=gray	    gui=none
+hi TabLineFill	ctermfg=black     ctermbg=gray      cterm=none
 
 " Active tab page label
-hi TabLineSel	guifg=white	  guibg=darkcyan    gui=none            ctermfg=white     ctermbg=darkcyan  cterm=bold
+" hi TabLineSel	guifg=white	  guibg=darkcyan    gui=none            ctermfg=white     ctermbg=darkcyan  cterm=bold
+hi TabLineSel	guifg=white	  guibg=darkcyan    gui=none
+hi TabLineSel	ctermfg=white     ctermbg=darkcyan  cterm=bold
 
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " Pop-up menu
 """""""""""""""""""""""""""""""""""""""""""""""
 
-" suggested by tigmoid, 2008 Jul 18 & removed by T. Le Bleis
+" suggested by tigmoid, 2008 Jul 18 & removed by bilbopingouin
 " Normal item
 " hi Pmenu	guifg=#c0c0c0 guibg=#404080
 "
@@ -221,36 +347,70 @@ hi TabLineSel	guifg=white	  guibg=darkcyan    gui=none            ctermfg=white 
 """""""""""""""""""""""""""""""""""""""""""""""
 
 " HTML titles
-hi htmlH1	guifg=#ff0000			    gui=bold		ctermfg=196	                    cterm=bold
-hi htmlH2	guifg=#00ff8b			    gui=bold		ctermfg=84			    cterm=bold
-hi htmlH3	guifg=#f9ff71			    gui=bold		ctermfg=226			    cterm=bold
-hi htmlH4	guifg=#71d5ec			    gui=bold		ctermfg=39			    cterm=bold
-hi htmlH5	guifg=#fb9bda			    gui=bold		ctermfg=212			    cterm=bold
-hi htmlH6	guifg=#bd55ee			    gui=bold		ctermfg=129			    cterm=bold
+" hi htmlH1	guifg=#ff0000			    gui=bold		ctermfg=196	                    cterm=bold
+hi htmlH1	guifg=#ff0000			    gui=bold
+hi htmlH1	ctermfg=196	                    cterm=bold
+" hi htmlH2	guifg=#00ff8b			    gui=bold		ctermfg=84			    cterm=bold
+hi htmlH2	guifg=#00ff8b			    gui=bold
+hi htmlH2	ctermfg=84			    cterm=bold
+" hi htmlH3	guifg=#f9ff71			    gui=bold		ctermfg=226			    cterm=bold
+hi htmlH3	guifg=#f9ff71			    gui=bold
+hi htmlH3	ctermfg=226			    cterm=bold
+" hi htmlH4	guifg=#71d5ec			    gui=bold		ctermfg=39			    cterm=bold
+hi htmlH4	guifg=#71d5ec			    gui=bold
+hi htmlH4	ctermfg=39			    cterm=bold
+" hi htmlH5	guifg=#fb9bda			    gui=bold		ctermfg=212			    cterm=bold
+hi htmlH5	guifg=#fb9bda			    gui=bold
+hi htmlH5	ctermfg=212			    cterm=bold
+" hi htmlH6	guifg=#bd55ee			    gui=bold		ctermfg=129			    cterm=bold
+hi htmlH6	guifg=#bd55ee			    gui=bold
+hi htmlH6	ctermfg=129			    cterm=bold
 
 " Tag names
-hi htmlTagName	guifg=cyan			    gui=underline	ctermfg=cyan			    cterm=underline
+" hi htmlTagName	guifg=cyan			    gui=underline	ctermfg=cyan			    cterm=underline
+hi htmlTagName	guifg=cyan			    gui=underline
+hi htmlTagName	ctermfg=cyan			    cterm=underline
 
 " Italic/bold text
-hi htmlItalic	guifg=yellow			    gui=italic		ctermfg=yellow			    cterm=italic
-hi htmlBold	guifg=darkgreen			    gui=bold		ctermfg=darkgreen		    cterm=bold
-hi htmlBoldItalic guifg=black	  guibg=yellow	    gui=bold,italic	ctermfg=black	  ctermbg=yellow    cterm=bold,italic 
+" hi htmlItalic	guifg=yellow			    gui=italic		ctermfg=yellow			    cterm=italic
+hi htmlItalic	guifg=yellow			    gui=italic
+hi htmlItalic	ctermfg=yellow			    cterm=italic
+" hi htmlBold	guifg=darkgreen			    gui=bold		ctermfg=darkgreen		    cterm=bold
+hi htmlBold	guifg=darkgreen			    gui=bold
+hi htmlBold	ctermfg=darkgreen		    cterm=bold
+" hi htmlBoldItalic guifg=black	  guibg=yellow	    gui=bold,italic	ctermfg=black	  ctermbg=yellow    cterm=bold,italic
+hi htmlBoldItalic guifg=black	  guibg=yellow	    gui=bold,italic
+hi htmlBoldItalic ctermfg=black	  ctermbg=yellow    cterm=bold,italic
 
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " Markup
 """""""""""""""""""""""""""""""""""""""""""""""
 
-hi markdownRule	guifg=darkgrey	guibg=#282828	    gui=none		ctermfg=darkgrey  ctermbg=233	    cterm=none
-hi markdownListMarker guifg=yellow		    gui=none		ctermfg=yellow			    cterm=none
-hi markdownUrl	guifg=cyan			    gui=underline	ctermfg=cyan			    cterm=underline
+" hi markdownRule	guifg=darkgrey	guibg=#282828	    gui=none		ctermfg=darkgrey  ctermbg=233	    cterm=none
+hi markdownRule	guifg=darkgrey	  guibg=#282828	    gui=none
+hi markdownRule	ctermfg=darkgrey  ctermbg=233	    cterm=none
+" hi markdownListMarker guifg=yellow		    gui=none		ctermfg=yellow			    cterm=none
+hi markdownListMarker guifg=yellow		    gui=none
+hi markdownListMarker ctermfg=yellow		    cterm=none
+" hi markdownUrl	guifg=cyan			    gui=underline	ctermfg=cyan			    cterm=underline
+hi markdownUrl	guifg=cyan			    gui=underline
+hi markdownUrl	ctermfg=cyan			    cterm=underline
 
 " Italic/bold text
-hi markdownItalic guifg=yellow			    gui=italic		ctermfg=yellow			    cterm=italic
-hi markdownBold	guifg=darkgreen			    gui=bold		ctermfg=darkgreen		    cterm=bold
-hi markdownBoldItalic guifg=black guibg=yellow      gui=bold,italic	ctermfg=black	  ctermbg=yellow    cterm=bold,italic 
+" hi markdownItalic guifg=yellow			    gui=italic		ctermfg=yellow			    cterm=italic
+hi markdownItalic guifg=yellow			    gui=italic
+hi markdownItalic ctermfg=yellow		    cterm=italic
+" hi markdownBold	guifg=darkgreen			    gui=bold		ctermfg=darkgreen		    cterm=bold
+hi markdownBold	guifg=darkgreen			    gui=bold
+hi markdownBold	ctermfg=darkgreen		    cterm=bold
+" hi markdownBoldItalic guifg=black guibg=yellow      gui=bold,italic	ctermfg=black	  ctermbg=yellow    cterm=bold,italic
+hi markdownBoldItalic guifg=black     guibg=yellow      gui=bold,italic
+hi markdownBoldItalic ctermfg=black   ctermbg=yellow    cterm=bold,italic
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " Terminal
 """""""""""""""""""""""""""""""""""""""""""""""
-hi Terminal	guifg=#282828								  ctermbg=233 
+" hi Terminal	guifg=#282828								  ctermbg=233
+hi Terminal	guifg=#282828
+hi Terminal	ctermbg=233
